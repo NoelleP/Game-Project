@@ -10,7 +10,7 @@ function setup() {
 }
 
 function draw(){
-	background(220);
+	background(50, 86, 168);
 
 //	draw all the balls in that array
 	for (let i = 0; i < balls.length; i++) {
@@ -50,7 +50,7 @@ class Ball {
 	}
 
 	drawBall(){  // draw a ball on the screen at x,y
-    		stroke(0);
+    		noStroke();
         let f = random(0,255);
         let g = random(0,255);
         let h = random(0,255);
@@ -72,7 +72,7 @@ class Diamond {
   	}
 
   	drawDiamonds(){  // draw a ball on the screen at x,y
-      		stroke(0);
+      		noStroke();
           let f = random(0,255);
           let g = random(0,255);
           let h = random(0,255);
