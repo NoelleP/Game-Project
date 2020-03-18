@@ -44,9 +44,9 @@ class Avatar {
 	}
 
 	drawMe(){  // draw the running person
-    		stroke("green");
+    		stroke("black");
         strokeWeight(3);
-    		fill("blue");
+    		fill("black");
 		    ellipse(this.x,this.y,20,20);
         line(this.x,this.y, this.x, this.y+40);
         line(this.x, this.y+40, this.x-20, this.y+60);
@@ -54,6 +54,23 @@ class Avatar {
         line(this.x+10, this.y+50, this.x+5, this.y+60);
         line(this.x, this.y+15, this.x-10, this.y+25);
         line(this.x-10, this.y+25, this.x+10, this.y+35);
+        noStroke();
+        fill(77,40,0);
+        rect(this.x-13,this.y-27,25,20)
+        fill(153,102,51);
+        rect(this.x-15,this.y-10,30,5);
+
+        // push();
+        // // beginShape();
+        // scale(1/7);
+        // bezier(463, 135, 335, 58, 40, 50, 16, 235);
+        // translate(447,-100);
+        // bezier(463, 135, 372, 364, 128, 241, 16, 235);
+        // translate(-585,250);
+        // bezier(136, 469, 345, 332, 128, 241, 157, 63);
+        // bezier(18, 342, 345, 332, 128, 241, 555, 111);
+        // // endShape();
+        // pop();
 	}
 
 	moveMe(){
@@ -85,10 +102,20 @@ class Ball {
 
 	// draw a ball on the screen at x,y
 	drawBall(){
-    	stroke(0);
-      strokeWeight(1);
-    	fill("red");
+    	noStroke();
+    	fill(123, 131, 189);
 		  ellipse(this.x,this.y,10,10);
+      fill(164, 165, 171);
+      triangle(this.x+27,this.y,this.x+40,this.y+10,this.x+40,this.y-10);
+      fill("gray");
+      ellipse(this.x+17,this.y,26,18);
+      fill("gray");
+      triangle(this.x+10,this.y,this.x+22,this.y-30,this.x+25,this.y);
+      ellipse(this.x+22,this.y-20,7,19);
+      fill(0);
+      ellipse(this.x-1,this.y-1, 2,2);
+      fill(164, 165, 171);
+      triangle(this.x-2,this.y-4,this.x-9,this.y,this.x-9,this.y+4);
 	}
 
 	//update the location of the ball, so it moves across the screen
