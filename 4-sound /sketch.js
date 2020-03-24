@@ -7,8 +7,8 @@ let me;
 let mySound;
 
 function preload() {
-  soundFormats('mp3', 'ogg');
-  mySound = loadSound('boing1.mp3');
+  soundFormats('mp3', 'ogg', 'wav');
+  mySound = loadSound('WingFlapping.wav');
 }
 
 function setup() {
@@ -50,16 +50,31 @@ class Avatar {
 	}
 
 	drawMe(){  // draw the running person
-    		stroke("green");
-        strokeWeight(3);
-    		fill("blue");
-		    ellipse(this.x,this.y,20,20);
-        line(this.x,this.y, this.x, this.y+40);
-        line(this.x, this.y+40, this.x-20, this.y+60);
-        line(this.x, this.y+40, this.x+10, this.y+50);
-        line(this.x+10, this.y+50, this.x+5, this.y+60);
-        line(this.x, this.y+15, this.x-10, this.y+25);
-        line(this.x-10, this.y+25, this.x+10, this.y+35);
+    stroke("black");
+    strokeWeight(3);
+    fill("black");
+    ellipse(this.x,this.y,20,20);
+    line(this.x,this.y, this.x, this.y+40);
+    line(this.x, this.y+40, this.x-20, this.y+60);
+    line(this.x, this.y+40, this.x+10, this.y+50);
+    line(this.x+10, this.y+50, this.x+5, this.y+60);
+    line(this.x, this.y+15, this.x-10, this.y+25);
+    line(this.x-10, this.y+25, this.x+10, this.y+35);
+    noStroke();
+    fill(77,40,0);
+    rect(this.x-13,this.y-27,25,20)
+    fill(153,102,51);
+    rect(this.x-15,this.y-10,30,5);
+
+    push();
+    translate(-90,-10);
+    beginShape();
+    fill("red");
+    bezier(this.x+478/5, this.y+104/5, this.x+350/5, this.y+150/5, this.x+100/5, this.y+56/5, this.x+42/5, this.y+183/5);
+    bezier(this.x+146/5, this.y+399/5, this.x+77/5, this.y+352/5, this.x+172/5, this.y+220/5, this.x+42/5, this.y+183/5);
+    bezier(this.x+146/5, this.y+399/5, this.x+208/5, this.y+174/5, this.x+440/5, this.y+324/5, this.x+478/5, this.y+104/5);
+    endShape();
+    pop();
 	}
 
 	moveMe(){
@@ -91,10 +106,20 @@ class Ball {
 
 	// draw a ball on the screen at x,y
 	drawBall(){
-    		stroke(0);
-        	strokeWeight(1);
-    		fill("red");
-		ellipse(this.x,this.y,10,10);
+    noStroke();
+    fill(123, 131, 189);
+    ellipse(this.x,this.y,10,10);
+    fill(164, 165, 171);
+    triangle(this.x+27,this.y,this.x+40,this.y+10,this.x+40,this.y-10);
+    fill("gray");
+    ellipse(this.x+17,this.y,26,18);
+    fill("gray");
+    triangle(this.x+10,this.y,this.x+22,this.y-30,this.x+25,this.y);
+    ellipse(this.x+22,this.y-20,7,19);
+    fill(0);
+    ellipse(this.x-1,this.y-1, 2,2);
+    fill(164, 165, 171);
+    triangle(this.x-2,this.y-4,this.x-9,this.y,this.x-9,this.y+4);
 	}
 
 	//update the location of the ball, so it moves across the screen
